@@ -1,0 +1,311 @@
+$background-button-color: rgba(174, 181, 185, 0.5);
+$esliGavrZahochet: rgba(124, 123, 133, 0.9);
+$roboto: Roboto, sans-serif;
+$element-border-radius: 5px;
+$color: #474849;
+
+@mixin button {
+  background-color: $background-button-color;
+  border-radius: $element-border-radius;
+  border: none;
+  color: white;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+
+@mixin button-hover {
+  background-color: $color;
+  color: rgb(255, 255, 255);
+  border-bottom: 1px solid darken($color, 10%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.6) 100%), url(/assets/3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.app {
+  margin: 0px 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 320px;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  min-width: 320px;
+}
+
+.weather,
+.geolocation {
+  padding-top: 100px;
+}
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+
+  &__units {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__background-image,
+  &__language,
+  &__unit {
+    @include button;
+    margin-right: 10px;
+    &:hover {
+      @include button-hover;
+    }
+  }
+
+  &__background-image {
+    width: 44px;
+    height: 44px;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+
+    &:active {
+      transform: scale(1.1);
+    }
+  }
+
+  &__language {
+    width: 71px;
+    height: 44px;
+
+    &:active,
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &__unit {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .settings__radio:checked + .settings__unit {
+    background-color: rgba(195, 194, 202, 0.9);
+  }
+
+  .settings__unit_celsius {
+    margin-left: 0px;
+  }
+
+  .settings__unit_fahrenheit {
+    margin-right: 0px;
+  }
+}
+
+.location {
+  margin-top: 10px;
+  font-family: $roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+
+  &__date,
+  &__clock {
+    font-family: $roboto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.7rem;
+    color: #ffffff;
+  }
+}
+
+.forecast {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &__tempreture {
+    font-family: $roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 10rem;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+
+  &__extra {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    &_cloudness {
+      font-family: $roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 6rem;
+    }
+
+    .extra__parameters {
+      .extra__parameter {
+        display: flex;
+        flex-direction: row;
+        font-family: $roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 1.3rem;
+        text-transform: uppercase;
+        color: #ffffff;
+      }
+    }
+  }
+}
+
+.geolocation {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  width: 35%;
+
+  &__search-form {
+    display: flex;
+    flex-direction: row;
+
+    .geolocation__search-input {
+      padding: 3px;
+      width: 80%;
+      height: 44px;
+      background: rgba(76, 82, 85, 0.4);
+      border: 1px solid rgba(228, 227, 227, 0.2);
+      color: white;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.2rem;
+      margin-right: 5px;
+    }
+    .geolocation__search-input:focus,
+    .geolocation__search-input:active {
+      outline: none;
+    }
+
+    .geolocation__search-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30%;
+      height: 44px;
+      background: rgba(174, 181, 185, 0.5);
+      border-radius: 5px;
+      font-family: $roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 1.7rem;
+      text-align: center;
+      color: #ffffff;
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+      border: 1px solid rgba(228, 227, 227, 0.2);
+    }
+
+    .geolocation__search-button:active,
+    .geolocation__search-button:focus {
+      outline: none;
+    }
+
+    .geolocation__search-button:active {
+      box-shadow: 5px 5px 15px 5px #000000;
+    }
+  }
+  .geolocation__map {
+    width: 100%;
+    height: 350px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: 13px;
+  }
+  .app {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  .weather,
+  .geolocation {
+    padding-top: 0px;
+  }
+  .geolocation {
+    width: 90%;
+  }
+  .location,
+  .calendar__date,
+  .calendar__clock,
+  .forecast__extra_cloudness {
+    text-align: center;
+  }
+  .geolocation__map {
+    width: 100%;
+    height: auto;
+    height: 200px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
+  .settings {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.sun {
+  color: gold;
+}
+
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+
+  .forecast {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .forecast__tempreture {
+    font-size: 7rem;
+  }
+  .forecast__extra_cloudness {
+    font-size: 3rem;
+  }
+}

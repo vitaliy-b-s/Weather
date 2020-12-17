@@ -1,0 +1,275 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  background: linear-gradient(rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.6) 100%), url(/assets/3.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.app {
+  margin: 0px 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-width: 320px;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  justify-content: space-between;
+  min-width: 320px;
+}
+
+.weather,
+.geolocation {
+  padding-top: 100px;
+}
+
+.settings {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+.settings__units {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.settings__background-image, .settings__language, .settings__unit {
+  background-color: rgba(174, 181, 185, 0.5);
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 5px;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+.settings__background-image:hover, .settings__language:hover, .settings__unit:hover {
+  background-color: #474849;
+  color: white;
+  border-bottom: 1px solid #2e2f2f;
+}
+.settings__background-image {
+  width: 44px;
+  height: 44px;
+}
+.settings__background-image:active, .settings__background-image:focus {
+  outline: none;
+}
+.settings__background-image:active {
+  transform: scale(1.1);
+}
+.settings__language {
+  width: 71px;
+  height: 44px;
+}
+.settings__language:active, .settings__language:focus {
+  outline: none;
+}
+.settings__unit {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.settings .settings__radio:checked + .settings__unit {
+  background-color: rgba(195, 194, 202, 0.9);
+}
+.settings .settings__unit_celsius {
+  margin-left: 0px;
+}
+.settings .settings__unit_fahrenheit {
+  margin-right: 0px;
+}
+
+.location {
+  margin-top: 10px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+}
+.calendar__date, .calendar__clock {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: #ffffff;
+}
+
+.forecast {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.forecast__tempreture {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 10rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+.forecast__extra {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.forecast__extra_cloudness {
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 6rem;
+}
+.forecast__extra .extra__parameters .extra__parameter {
+  display: flex;
+  flex-direction: row;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+.geolocation {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  width: 35%;
+}
+.geolocation__search-form {
+  display: flex;
+  flex-direction: row;
+}
+.geolocation__search-form .geolocation__search-input {
+  padding: 3px;
+  width: 80%;
+  height: 44px;
+  background: rgba(76, 82, 85, 0.4);
+  border: 1px solid rgba(228, 227, 227, 0.2);
+  color: white;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.2rem;
+  margin-right: 5px;
+}
+.geolocation__search-form .geolocation__search-input:focus,
+.geolocation__search-form .geolocation__search-input:active {
+  outline: none;
+}
+.geolocation__search-form .geolocation__search-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 44px;
+  background: rgba(174, 181, 185, 0.5);
+  border-radius: 5px;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.7rem;
+  text-align: center;
+  color: #ffffff;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border: 1px solid rgba(228, 227, 227, 0.2);
+}
+.geolocation__search-form .geolocation__search-button:active,
+.geolocation__search-form .geolocation__search-button:focus {
+  outline: none;
+}
+.geolocation__search-form .geolocation__search-button:active {
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+.geolocation .geolocation__map {
+  width: 100%;
+  height: 350px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 1100px) {
+  html {
+    font-size: 13px;
+  }
+
+  .app {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .weather,
+.geolocation {
+    padding-top: 0px;
+  }
+
+  .geolocation {
+    width: 90%;
+  }
+
+  .location,
+.calendar__date,
+.calendar__clock,
+.forecast__extra_cloudness {
+    text-align: center;
+  }
+
+  .geolocation__map {
+    width: 100%;
+    height: auto;
+    height: 200px;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+
+  .settings {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+.sun {
+  color: gold;
+}
+
+@media screen and (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+
+  .forecast {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .forecast__tempreture {
+    font-size: 7rem;
+  }
+
+  .forecast__extra_cloudness {
+    font-size: 3rem;
+  }
+}

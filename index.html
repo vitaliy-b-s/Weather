@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather</title>
+    <script src="https://kit.fontawesome.com/9e158ddf77.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="weather">
+        <div class="settings">
+          <button class="settings__background-image">
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+          </button>
+          <select class="settings__language">
+            <option>EN</option>
+            <option selected>RU</option>
+          </select>
+          <form class="settings__units">
+            <input
+              type="radio"
+              id="F"
+              name="tempreture"
+              class="settings__radio"
+              value="F"
+              style="display: none"
+            />
+            <label class="settings__unit settings__unit_fahrenheit" for="F"> ℉ </label>
+            <input
+              type="radio"
+              id="C"
+              name="tempreture"
+              class="settings__radio"
+              value="C"
+              checked
+              style="display: none"
+            />
+            <label class="settings__unit settings__unit_celsius" for="C"> ℃ </label>
+          </form>
+        </div>
+        <div class="location">Беларусь, Минск</div>
+        <div class="calendar">
+          <div class="calendar__date">среда 29 февраля</div>
+          <div class="calendar__clock">14:88:88</div>
+        </div>
+        <div class="forecast">
+          <div class="forecast__tempreture">25°</div>
+          <div class="forecast__extra">
+            <div class="forecast__extra_cloudness">
+              <i id="cloud" class="fas fa-cloud-sun" style="color: rgb(107, 102, 102)"></i>
+            </div>
+            <div class="extra__parameters">
+              <div class="extra__parameter">
+                <div class="extra__feels-tempreture">Ощущается: &nbsp</div>
+                <div class="extra__feels-tempreture-value">25°</div>
+              </div>
+              <div class="extra__parameter">
+                <div class="extra__wind-speed">Скорость ветра: &nbsp</div>
+                <div class="extra__wind-speed-value">5м/с</div>
+              </div>
+              <div class="extra__parameter">
+                <div class="extra__humidity">Влажность: &nbsp</div>
+                <div class="extra__humidity-value">99%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="geolocation">
+        <div class="geolocation__search-form">
+          <input type="search" class="geolocation__search-input" placeholder="Поиск по городу" />
+          <button class="geolocation__search-button">Поиск</button>
+        </div>
+        <div class="geolocation__map" id="map"></div>
+      </div>
+    </div>
+    <!-- <script src="./js/index.js"></script> -->
+    <!-- <script src="./js/corectedIndex.js"></script> -->
+    <!-- <script src="./js/corectedIndexV2.js"></script> -->
+    <!-- <script src="./js/corectedIndexV3.js"></script> -->
+    <script src="./js/corectedIndexV4.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvAYnqJhgmfLfygHP0zUtYYl8V4nFugbA&libraries=&v=weekly"></script>
+  </body>
+</html>
