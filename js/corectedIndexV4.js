@@ -181,6 +181,8 @@ function changeImage() {
   const random = Math.floor(Math.random() * Math.floor(4));
   document.body.style = `
   background:linear-gradient( rgba(0, 0, 0, 0.6) 100%, rgba(0, 0, 0, 0.6)100%),url("./assets/${random}.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
   `;
 }
 
