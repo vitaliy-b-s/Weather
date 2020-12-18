@@ -1,4 +1,4 @@
-const WEATHER_API_URL = `http://api.openweathermap.org/data/2.5/weather?&units=metric&appid=56a23fbb5471c446e61df4da49c6eb43&`;
+const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/weather?&units=metric&appid=56a23fbb5471c446e61df4da49c6eb43&`;
 const GEO_API_URL = `https://api.bigdatacloud.net/data/reverse-geocode-client?&units=metric&appid=56a23fbb5471c446e61df4da49c6eb43&`;
 const FORMATS = {
   date: {
